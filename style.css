@@ -1,0 +1,125 @@
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: #f3f5f9;
+    color: #202636;
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+/* Form and toolbar styling */
+.task-form, .tools, .column {
+    padding: 16px;
+    border: 1px solid #dce1eb;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.task-form, .tools {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+/* Input and button styling */
+input, select, button {
+    min-height: 36px;
+    padding: 7px 10px;
+    border: 1px solid #b8c1d1;
+    border-radius: 6px;
+    font: inherit;
+}
+
+button {
+    border: 0;
+    background: #315fc4;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #244a9e;
+}
+
+/* Validation error message styling */
+.error {
+    flex-basis: 100%;
+    min-height: 1em;
+    margin: 0;
+    color: #b42318;
+}
+
+/* Kanban board layout */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: start;
+}
+
+.column h2 {
+    font-size: 1.1rem;
+}
+
+/* Task card styling */
+.todo-list {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.todo-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid #e0e5ed;
+    border-radius: 8px;
+    background: #fafbfe;
+}
+
+.todo-text {
+    flex: 1 1 100px;
+    overflow-wrap: anywhere;
+}
+
+/* Completed task appearance */
+.completed-text {
+    text-decoration: line-through;
+    color: #647084;
+}
+
+/* Due-date text styling */
+.due-date {
+    flex-basis: 100%;
+    color: #596579;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 760px) {
+    body {
+        padding: 14px;
+    }
+
+    .board {
+        grid-template-columns: 1fr;
+    }
+}

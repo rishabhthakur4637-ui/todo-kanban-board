@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main application container -->
+    <main class="app">
+        <h1>To-Do List</h1>
+        <p>Double-click a task name or use Edit to change it.</p>
+
+        <!-- Task name and due-date form -->
+        <form id="task-form" class="task-form" aria-label="Add a task">
+            <label for="todo-input">Task name</label>
+            <input type="text" id="todo-input" placeholder="What needs to be done?">
+            <label for="due-date-input">Due date</label>
+            <input type="date" id="due-date-input" min="1000-01-01" max="9999-12-31">
+            <button id="add-btn" type="submit">Add task</button>
+            <p id="error-message" class="error" role="alert" aria-live="polite"></p>
+        </form>
+
+        <!-- Search, sorting, and completed-task controls -->
+        <section class="tools" aria-label="Search and sort tasks">
+            <label for="search-input">Search by task or due date</label>
+            <input type="search" id="search-input" placeholder="Search tasks or MM/DD/YYYY">
+            <label for="sort-select">Sort tasks</label>
+            <select id="sort-select">
+                <option value="default">Default order</option>
+                <option value="dueDateAsc">Due date (earliest first)</option>
+                <option value="dueDateDesc">Due date (latest first)</option>
+                <option value="statusPending">Status (Pending first)</option>
+                <option value="statusCompleted">Status (Completed first)</option>
+            </select>
+            <!-- Remove all completed tasks -->
+            <button id="clear-completed-btn" type="button">Clear completed</button>
+        </section>
+
+        <!-- Kanban board with one column for each task status -->
+        <section class="board" aria-label="Tasks by status">
+            <!-- Pending tasks -->
+            <div class="column">
+                <h2>Pending</h2>
+                <ul id="pending-list" class="todo-list"></ul>
+            </div>
+            <!-- Tasks currently in progress -->
+            <div class="column">
+                <h2>In Progress</h2>
+                <ul id="in-progress-list" class="todo-list"></ul>
+            </div>
+            <!-- Completed tasks -->
+            <div class="column">
+                <h2>Completed</h2>
+                <ul id="completed-list" class="todo-list"></ul>
+            </div>
+        </section>
+    </main>
+    <!-- Connect the JavaScript file -->
+    <script src="script.js?v=3"></script>
+</body>
+</html>
